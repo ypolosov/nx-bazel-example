@@ -1,0 +1,16 @@
+version: '3' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+
+  nx-bazel: # name of the first service
+    build:
+      context: ./ # folder with Dockerfile
+      dockerfile: Dockerfile.dev # Dockerfile alternative
+    image: nx-bazel # with 'build' section means the built image name
+    container_name: nx-bazel-container # Specify a custom container name, rather than a generated default name.
+    ports:
+      - 5432:5432
+    volumes:
+      - ./:/usr/src/app
+    command: npm run start
