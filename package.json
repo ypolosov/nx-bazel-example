@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "prestart:dev": "npm i",
     "start:dev": "docker-compose -f docker-compose.dev.yml up",
     "ng": "ng",
     "start": "concurrently \"ibazel run //backend\" \"ibazel run //apps/car-list/src:devserver\"",
